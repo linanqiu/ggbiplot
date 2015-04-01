@@ -37,12 +37,12 @@ ggscreeplot <- function(pcobj, type = c('pev', 'cev'))
                  cev = cumsum(d) / sum(d))
 
   yvar.lab <- switch(type,
-                     pev = 'proportion of explained variance',
-                     cev = 'cumulative proportion of explained variance')
+                     pev = 'Proportion of Explained Variance',
+                     cev = 'Cumulative Proportion of Explained Variance')
 
   df <- data.frame(PC = 1:length(d), yvar = yvar)
 
   ggplot(data = df, aes(x = PC, y = yvar)) + 
-    xlab('principal component number') + ylab(yvar.lab) +
+    xlab('Principal Component Number') + ylab(yvar.lab) +
     geom_point() + geom_path()
 }
